@@ -1,0 +1,28 @@
+.player-select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.player-select label {
+  margin-right: 10px;
+}
+
+.player-select select {
+  font-size: 16px;
+  padding: 5px;
+}
+
+@media (max-width: 768px) {
+  
+  .player-select select {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .player-select select {
+    font-size: 12px;
+  }
+}
