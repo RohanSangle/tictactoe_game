@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/scoreboard.css'
 
 const Scoreboard = ({ xWins, oWins, ties }) => {
   return (

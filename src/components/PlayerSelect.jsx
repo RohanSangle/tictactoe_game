@@ -1,6 +1,7 @@
 import React from 'react';
+import '../styles/player-select.css'
 
-const PlayerSelect = ({ onSelectPlayer }) => {
+const PlayerSelect = ( {onSelectPlayer} ) => {
   return (
     <div>
       <h2>Select Player</h2>

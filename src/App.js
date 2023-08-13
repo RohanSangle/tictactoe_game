@@ -3,6 +3,7 @@ import Board from './components/Board';
 import PlayerSelect from './components/PlayerSelect';
 import Scoreboard from './components/Scoreboard';
 import RestartButton from './components/RestartButton';
+import './styles/styles.css'
 
 function App() {
   const [player, setPlayer] = useState(null);
@@ -28,7 +29,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="app">
       <h1>Tic Tac Toe</h1>
       {!player && <PlayerSelect onSelect={handlePlayerSelect} />}
       {player && (

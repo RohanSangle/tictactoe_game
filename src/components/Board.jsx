@@ -1,5 +1,6 @@
 import React from 'react';
 import Cell from './Cell';
+import '../styles/board.css'
 
 const Board = ({ board, handleCellClick }) => {
   return (
