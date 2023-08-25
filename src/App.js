@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Board from './components/Board';
 import PlayerSelect from './components/PlayerSelect';
 import Scoreboard from './components/Scoreboard';
 import RestartButton from './components/RestartButton';
-import './styles/styles.css'
+import './App.css'
+import xologo from './images/xologo.jpg'
 
 function App() {
   const [player, setPlayer] = useState(null);
@@ -139,9 +140,14 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <h1>Tic Tac Toe</h1>
-      {!player && <PlayerSelect onSelectPlayer={handlePlayerSelect} />}
+    <div className="">
+      {!player &&
+      <>
+        {/* <h1 className='tttlogo'>Tic Tac Toe</h1> */}
+        <img className='tttlogo' src={xologo} alt=''></img> 
+        <PlayerSelect onSelectPlayer={handlePlayerSelect} />
+      </>
+      }
       {player && (
         <>
           <Board board={board} onClick={gameOver ? handleRestart : handleCellClick} onGameEnd={handleGameEnd} handleCellClick={handleCellClick} />
