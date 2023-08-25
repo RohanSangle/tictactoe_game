@@ -1,12 +1,13 @@
 import React from 'react';
 import '../styles/scoreboard.css'
 
-const Scoreboard = ({ xWins, oWins, ties }) => {
+const Scoreboard = ({ score }) => {
+  const { X, O, tie } = score;
   return (
     <div className="scoreboard">
-      <p>X Wins: {xWins}</p>
-      <p>O Wins: {oWins}</p>
-      <p>Ties: {ties}</p>
+      <p>X Wins: {X}</p>
+      <p>O Wins: {O}</p>
+      <p>Ties: {tie}</p>
     </div>
   );
 };

@@ -1,9 +1,11 @@
 import React from 'react';
 import '../styles/restart-button.css'
 
-const RestartButton = ({ onClick }) => {
+const RestartButton = ({ handleRestart }) => {
   return (
-    <button onClick={onClick}>Restart Game</button>
+    <button onClick={handleRestart}>Restart Game</button>
+
+
   );
 };
 
