@@ -6,10 +6,10 @@ const PlayerSelect = ( {onSelectPlayer} ) => {
     <div className='menu'>
       
       <section className='menusmallbox'>
-        <h2 className='line' >Pick Player 1's Mark</h2>
+        <h2 className='line' >Pick Player 1's Mark</h2> 
         <section className='xochoose'>
-          <button onClick={() => onSelectPlayer('X')}>X</button>
-          <button onClick={() => onSelectPlayer('O')}>O</button>
+          <button className='xobutton' onClick={() => onSelectPlayer('X')}>X</button>
+          <button className='xobutton' onClick={() => onSelectPlayer('O')}>O</button>
         </section>
         <h4 className='line'>REMEMBER : X goes first</h4>
       </section >

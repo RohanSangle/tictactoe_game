@@ -10,8 +10,14 @@
   height: fit-content;
   width: fit-content;
   margin-top: 8%;
+  margin-right: 6%;
   /* margin-right: 35%; */
-  /* background-color: red; */
+  background-color: rgb(168, 191, 201);
+  box-shadow: inset 0rem -0.4rem 0rem #6b8997;
+  box-sizing: border-box;
+  border: 10px solid #e5e7eb;
+  border-radius: 5px;
+  
 }
 
 @media (max-width: 768px) {
