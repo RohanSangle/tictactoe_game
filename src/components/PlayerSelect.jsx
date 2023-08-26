@@ -14,8 +14,8 @@ const PlayerSelect = ( {onSelectPlayer} ) => {
         <h4 className='line'>REMEMBER : X goes first</h4>
       </section >
       <section className='menusmallbox2'>
-        <button>NEW GAME (VS CPU)</button>
-        <button>NEW GAME (VS PLAYER)</button>
+        <button className='yellow' >NEW GAME (VS CPU)</button>
+        <button className='blue'>NEW GAME (VS PLAYER)</button>
       </section>
     </div>
   );

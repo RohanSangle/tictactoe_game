@@ -19,3 +19,49 @@
   align-items: center;
   
 }
+
+
+.topbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  /* padding: 0 2%; */
+  height: 15%;
+  width: 36%;
+  margin-top: 15%;
+  margin-left: 32%;
+  
+
+  .tttlogo2{
+    /* margin-left: 35%; */
+    /* margin-right: 35%; */
+    padding-top: 10%;
+    padding-bottom: 2%;
+    width: fit-content;
+    height: fit-content;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .turn{
+    margin-right: 2%;
+    margin-top: 8%;
+    /* margin-bottom: 2%; */
+    background-color: #fff;
+    border: none;
+    /* cursor: pointer; */
+    /* font-size: 16px; */
+    font-weight: bold;
+    height: 30%;
+    width: 40%;
+    /* margin-top: 20px; */
+    /* margin-right: 35%; */
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: aqua;
+  }
+}

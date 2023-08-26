@@ -150,6 +150,11 @@ function App() {
       }
       {player && (
         <>
+          <section className='topbar'>
+            <img className='tttlogo2' src={xologo} alt=''></img>
+            <button className='turn'>X turn</button>
+            <RestartButton handleRestart={handleRestart} />
+          </section>
           <Board board={board} onClick={gameOver ? handleRestart : handleCellClick} onGameEnd={handleGameEnd} handleCellClick={handleCellClick} />
           <Scoreboard score={score} />
           
@@ -158,7 +163,6 @@ function App() {
               {winner === 'tie' ? 'It\'s a tie!' : `Player ${winner} wins!`}
             </div>
           )}
-          <RestartButton handleRestart={handleRestart} />
         </>
       )}
     </div>
