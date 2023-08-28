@@ -12,6 +12,8 @@ function App() {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [winner, setWinner] = useState(null);
   const [gameOver, setGameOver] = useState(false);
+  const [playerSelected, setPlayerSelected] = useState(false);
+
 
   // useEffect(() => {
   //   const savedBoard = localStorage.getItem('ticTacToeBoard');
@@ -36,29 +38,7 @@ function App() {
   //   localStorage.setItem('ticTacToePlayer', player);
   //   localStorage.setItem('ticTacToeScore', JSON.stringify(score));
   // }, [board, player, score]);
-
-  // const calculateWinner = (board) => {
-  //   const winningCombinations = [
-  //     [board[0], board[1], board[2]],
-  //     [board[3], board[4], board[5]],
-  //     [board[6], board[7], board[8]],
-  //     [board[0], board[3], board[6]],
-  //     [board[1], board[4], board[7]],
-  //     [board[2], board[5], board[8]],
-  //     [board[0], board[4], board[8]],
-  //     [board[2], board[4], board[6]],
-  //   ];
-
-  //   const winningCombination = winningCombinations.find((combination) => {
-  //     const [a, b, c] = combination;
-      
-  //     return a && a === b && b === c;
-      
-  //   });
-
-  //   return winningCombination ? winningCombination[0] : null;
-  // }
-
+  
   const Win_conditions = [
     [0, 1, 2],
     [3, 4, 5],
@@ -118,6 +98,15 @@ function App() {
 
   const handlePlayerSelect = (selectedPlayer) => {
     setPlayer(selectedPlayer);
+    setPlayerSelected(true);
+  };
+
+  const handleQuit = () => {
+    setPlayer(null);
+    setPlayerSelected(false);
+    setBoard(Array(9).fill(null));
+    setWinner(null);
+    setScore({ X: 0, O: 0, tie: 0 });
   };
 
   const handleGameEnd = (winner) => {
@@ -152,7 +141,7 @@ function App() {
         <>
           <section className='topbar'>
             <img className='tttlogo2' src={xologo} alt=''></img>
-            <button className='turn'>X turn</button>
+            <button className='turn'>{player} turn</button>
             <RestartButton handleRestart={handleRestart} />
           </section>
           <Board board={board} onClick={gameOver ? handleRestart : handleCellClick} onGameEnd={handleGameEnd} handleCellClick={handleCellClick} />
@@ -160,7 +149,11 @@ function App() {
           
           {winner && (
             <div className="winner-message">
-              {winner === 'tie' ? 'It\'s a tie!' : `Player ${winner} wins!`}
+              <p className='winmessage'>{winner === 'tie' ? 'It\'s a tie!' : `Player ${winner} wins!`}</p>
+              <span className='end-buttons'>
+                {playerSelected && <button className='smallquit' onClick={handleQuit}>Quit</button>}
+                <button className='nextgame' onClick={handleRestart}>Next Round</button>
+              </span>
             </div>
           )}
         </>
