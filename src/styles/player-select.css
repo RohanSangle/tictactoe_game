@@ -26,21 +26,24 @@
   >h2{
     color: #a8bfc9;
     margin-top: 8%;
-    font-size: 16px;
+    font-size:larger;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
     word-spacing: 2px;
     background: local;
     
+    
   } 
   >h4{
-    color: #a8bfc9;
+    color:#a8bfc9;
+    opacity: .5;
     margin-top: 5%;
     margin-left: 55%;
-    font-size: 16px;
-    font-weight: 400;
+    font-size:small;
+    font-weight: 500;
     text-transform: uppercase;
+    letter-spacing: 2px;
     word-spacing: 2px;
     background: local;
   
@@ -65,7 +68,7 @@
   
   
   
-  .xobutton{
+  .xbutton{
     width: 80%;
     height: 80%;
     cursor: pointer;
@@ -74,15 +77,50 @@
     margin-right: 2%;
     /* padding-right: 15px; */
     background-color: #a8bfc9;
+    color: #1a2a33;
     border: 0;
+    font-size: xx-large;
+    font-weight: 800;
+
+    .xbutton.selected {
+      background-color: white; /* Background color for the selected X button */
+      color: black; /* Text color for the selected X button */
+    }
 
 
   }
+
+  .obutton{
+    width: 80%;
+    height: 80%;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
+    /* padding-right: 15px; */
+    background-color:#1a2a33;
+    color:#a8bfc9;
+    border: 0;
+    font-size: xx-large;
+    font-weight: 800;
+
+    .obutton.selected {
+      background-color: white; /* Background color for the selected O button */
+      color: black; /* Text color for the selected O button */
+    }
+
+  }
+
+  .obutton:active{
+    color: #1a2a33;
+    background-color: #a8bfc9;
+  }
+
   
 }
 
 .line{
-  margin-left: 50%;
+  margin-left: 48%;
   
 }
 
@@ -96,6 +134,7 @@
   align-items: center;
 
   >button{
+    cursor: pointer;
     margin-top: 5%;
     /* margin-bottom: 2%; */
     width: 100%;
@@ -105,10 +144,12 @@
     justify-content: center;
     align-items: center;
     border-radius: 15px;
-    text-decoration: #1a2a33;
-    font-size: 16px; 
+    color: rgb(26 42 51);
+    font-size:larger; 
     font-weight: bold;
-    font-weight: 700;
+    letter-spacing: 2px;
+    word-spacing: 1px;
+    /* font-weight: 700; */
     border: 0;
   }
 
