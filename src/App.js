@@ -5,6 +5,7 @@ import Scoreboard from './components/Scoreboard';
 import RestartButton from './components/RestartButton';
 import './App.css'
 import xologo from './images/logo.svg'
+import logout from './images/logout.png'
 
 function App() {
   const [player, setPlayer] = useState(null);
@@ -143,8 +144,9 @@ function App() {
             <img className='tttlogo2' src={xologo} alt=''></img>
             <button className='turn'>{player} turn</button>
             <RestartButton handleRestart={handleRestart} />
+            <img className='logout' src={logout} alt='' onClick={handleQuit}></img> 
           </section>
-          <Board board={board} onClick={gameOver ? handleRestart : handleCellClick} onGameEnd={handleGameEnd} handleCellClick={handleCellClick} />
+          <Board board={board} onClick={gameOver ? handleRestart : handleCellClick} onGameEnd={handleGameEnd} handleCellClick={handleCellClick} currentPlayer={player} />
           <Scoreboard score={score} />
           
           {winner && (

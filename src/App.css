@@ -68,7 +68,7 @@
     height: 45%;
     width: 30%;
     /* margin-top: 20px; */
-    /* margin-right: 35%; */
+    margin-left: 5%;
     box-sizing: border-box;
     border-radius: 5px;
     background-color: #1f3641;
@@ -77,6 +77,16 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     word-spacing: 3px;
+  }
+
+  .logout{
+    margin-top: 8%;
+    cursor: pointer;
+    width: 10%;
+    height: 35%;
+    background-color: #a8bfc9;
+    border-radius: 5px;
+    margin-left: -10%;
   }
 }
 
