@@ -9,6 +9,7 @@
 }
 
 .tttlogo{
+  /* position: relative; */
   margin-left: 47%;
   padding-top: 10%;
   padding-bottom: 2%;
@@ -19,6 +20,10 @@
   justify-content: center;
   align-items: center;
   background: local;
+  /* mix-blend-mode:multiply; */
+  /* background-color: #1a2a33; */
+  
+  
   
 }
 
@@ -126,6 +131,7 @@
       border-radius: 10px;
       border: 0;
       /* color: white; */
+      color: rgb(26 42 51);
       background-color: #a8bfc9;
       width: 50%;
       box-shadow: inset 0rem -0.3rem 0rem #6b8997;
@@ -140,6 +146,7 @@
       border: 0;
       border-radius: 10px;
       /* color: white; */
+      color: rgb(26 42 51);
       background-color: #f2b137;
       box-shadow: inset 0rem -0.3rem 0rem #cc8b13;
       text-transform: uppercase;

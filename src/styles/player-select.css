@@ -158,10 +158,18 @@
     box-shadow: inset 0rem -0.6rem 0rem #cc8b13;
     
   }
+  >button.yellow:hover{
+    background-color:#f3e65d;
+    
+  }
+
   >button.blue{
     background-color: #31c3bd;
     box-shadow: inset 0rem -0.6rem 0rem #118c87;
     
+  }
+  >button.blue:hover{
+    background-color:lightblue;
   }
   
 }

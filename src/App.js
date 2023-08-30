@@ -4,7 +4,7 @@ import PlayerSelect from './components/PlayerSelect';
 import Scoreboard from './components/Scoreboard';
 import RestartButton from './components/RestartButton';
 import './App.css'
-import xologo from './images/xologo.jpg'
+import xologo from './images/logo.svg'
 
 function App() {
   const [player, setPlayer] = useState(null);
