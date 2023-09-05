@@ -76,17 +76,12 @@
     margin-left: 2%;
     margin-right: 2%;
     /* padding-right: 15px; */
-    background-color: #a8bfc9;
-    color: #1a2a33;
+    background-color: #1a2a33;
+    color: #a8bfc9;
     border: 0;
     font-size: xx-large;
     font-weight: 800;
-
-    .xbutton.selected {
-      background-color: white; /* Background color for the selected X button */
-      color: black; /* Text color for the selected X button */
-    }
-
+    transition: background-color 0.2s ease, color 0.2s ease;
 
   }
 
@@ -103,14 +98,23 @@
     border: 0;
     font-size: xx-large;
     font-weight: 800;
-
-    .obutton.selected {
-      background-color: white; /* Background color for the selected O button */
-      color: black; /* Text color for the selected O button */
-    }
+    transition: background-color 0.2s ease, color 0.2s ease;
 
   }
 
+  .xbutton:hover,
+  .obutton:hover {
+    background-color: #697d882d;
+    
+  }
+
+  .xbutton.selected,
+  .xbutton:active {
+      background-color: #a8bfc9; /* Background color for the selected X button */
+      color: #1a2a33;
+    }
+
+  .obutton.selected,
   .obutton:active{
     color: #1a2a33;
     background-color: #a8bfc9;

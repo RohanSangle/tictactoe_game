@@ -1,15 +1,11 @@
-import React from 'react';
+import React from 'react'
 
 const ComputerPlayer = () => {
-  // Logic for computer player's move?
-  
-  
-  const makeMove = (board) => {
-    // Implement clever move logic here
+  return (
+    <div>
+      //implement logic for computer move?
+    </div>
+  )
+}
 
-  };
-
-  return null;
-};
-
-export default ComputerPlayer;
+export default ComputerPlayer
