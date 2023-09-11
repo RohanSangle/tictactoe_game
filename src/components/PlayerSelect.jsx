@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import '../styles/player-select.css'
 
-const PlayerSelect = ( {onSelectPlayer} ) => {
+const PlayerSelect = ( {onSelectPlayer, toggleGameMode} ) => {
   const [chosenPlayer, setChosenPlayer]=useState(null);
   
 
@@ -39,7 +39,15 @@ const PlayerSelect = ( {onSelectPlayer} ) => {
         <h4 className='line'>REMEMBER : X goes first</h4>
       </section >
       <section className='menusmallbox2'>
-        <button className='yellow' >NEW GAME (VS CPU)</button>
+        <button className='yellow'onClick={toggleGameMode}>NEW GAME (VS CPU)</button>
+        {/* {vsComputer && (
+            <ComputerPlayer
+              board={board}
+              currentPlayer={player}
+              onComputerMove={handleComputerMove}
+              setGameOver={setGameOver} 
+            />
+          )} */}
         <button className='blue' onClick={handleNewGameClick}>NEW GAME (VS PLAYER)</button>
         
       </section>

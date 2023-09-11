@@ -1,24 +1,25 @@
-// Function to check if a player has won the game
-export function checkWinner(board) {
-  // Code to check for winning conditions
+const Win_conditions = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6]
+]
+
+export const calculateWinner = (board) => {
+  for (let i = 0; i < Win_conditions.length; i++) {
+    const [x, y, z] = Win_conditions[i];
+
+    if (board[x] && board[x] === board[y] && board[y] === board[z]) {
+      // setGameOver(true);
+      return board[x];
+    }
+  }
 }
 
-// Function to check if the game is a tie
-export function checkTie(board) {
-  // Code to check for tie condition
-}
-
-// Function to calculate the next move for the computer player
-export function calculateNextMove(board) {
-  // Code to calculate the next move for the computer player
-}
-
-// Function to reset the game state
-export function resetGame() {
-  // Code to reset the game state
-}
-
-// Function to update the game state
-export function updateGameState() {
-  // Code to update the game state
+export const isBoardFull = (board) => {
+  return board.every((cell) => cell !== null);
 }

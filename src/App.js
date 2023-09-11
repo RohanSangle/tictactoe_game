@@ -3,6 +3,8 @@ import Board from './components/Board';
 import PlayerSelect from './components/PlayerSelect';
 import Scoreboard from './components/Scoreboard';
 import RestartButton from './components/RestartButton';
+import ComputerPlayer from './components/ComputerPlayer'; // Update the path to your component
+import { calculateWinner, isBoardFull } from './utils';
 import './App.css'
 import xologo from './images/logo.svg'
 import logout from './images/logout.png'
@@ -14,6 +16,7 @@ function App() {
   const [winner, setWinner] = useState(null);
   const [gameOver, setGameOver] = useState(false);
   const [playerSelected, setPlayerSelected] = useState(false);
+  const [vsComputer, setVsComputer] = useState(false);
 
 
   // useEffect(() => {
@@ -39,32 +42,58 @@ function App() {
   //   localStorage.setItem('ticTacToePlayer', player);
   //   localStorage.setItem('ticTacToeScore', JSON.stringify(score));
   // }, [board, player, score]);
+
+  const toggleGameMode = () => {
+    setVsComputer(!vsComputer);
+  };
+
+  const handleComputerMove = (SquareIndex) => {
+    // Update the board with the computer's move
+    const newBoard = [...board];
+    newBoard[SquareIndex] = player === 'X' ? 'O' : 'X';
+    setBoard(newBoard);
   
-  const Win_conditions = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6]
-  ]
-
-  const calculateWinner = (board) => {
-    for (let i = 0; i < Win_conditions.length; i++) {
-      const [x, y, z] = Win_conditions[i];
-
-      if (board[x] && board[x] === board[y] && board[y] === board[z]) {
-        setGameOver(true);
-        return board[x];
-      }
+    // Check for a win or tie
+    const newWinner = calculateWinner(newBoard);
+    if (newWinner) {
+      setWinner(newWinner);
+      // Handle game end logic
+    } else if (isBoardFull(newBoard)) {
+      setWinner('tie');
+      // Handle game end logic for a tie
+    } else {
+      // Switch players
+      setPlayer(player === 'X' ? 'O' : 'X');
     }
-  }
+  };
+  
+  
+  
+  // const Win_conditions = [
+  //   [0, 1, 2],
+  //   [3, 4, 5],
+  //   [6, 7, 8],
+  //   [0, 3, 6],
+  //   [1, 4, 7],
+  //   [2, 5, 8],
+  //   [0, 4, 8],
+  //   [2, 4, 6]
+  // ]
 
-  const isBoardFull = (board) => {
-    return board.every((cell) => cell !== null);
-  }
+  // const calculateWinner = (board) => {
+  //   for (let i = 0; i < Win_conditions.length; i++) {
+  //     const [x, y, z] = Win_conditions[i];
+
+  //     if (board[x] && board[x] === board[y] && board[y] === board[z]) {
+  //       setGameOver(true);
+  //       return board[x];
+  //     }
+  //   }
+  // }
+
+  // const isBoardFull = (board) => {
+  //   return board.every((cell) => cell !== null);
+  // }
 
   const handleCellClick = (index) => {
     if (board[index] || winner) {
@@ -135,9 +164,21 @@ function App() {
       <>
         {/* <h1 className='tttlogo'>Tic Tac Toe</h1> */}
         <img className='tttlogo' src={xologo} alt=''></img> 
-        <PlayerSelect onSelectPlayer={handlePlayerSelect} />
+        <PlayerSelect onSelectPlayer={handlePlayerSelect} toggleGameMode={toggleGameMode}/>
       </>
       }
+      {/* {vsComputer && (
+        <>
+            <ComputerPlayer
+              board={board}
+              currentPlayer={player}
+              onComputerMove={handleComputerMove}
+              setGameOver={setGameOver} 
+            />
+            <Board board={board} onClick={gameOver ? handleRestart : handleCellClick} onGameEnd={handleGameEnd} handleCellClick={handleCellClick} currentPlayer={player} />
+            <Scoreboard score={score} />
+        </>
+      )} */}
       {player && (
         <>
           <section className='topbar'>
@@ -146,6 +187,14 @@ function App() {
             <RestartButton handleRestart={handleRestart} />
             <img className='logout' src={logout} alt='' onClick={handleQuit}></img> 
           </section>
+          {/* {vsComputer && (
+            <ComputerPlayer
+              board={board}
+              currentPlayer={player}
+              onComputerMove={handleComputerMove}
+              setGameOver={setGameOver} 
+            />
+          )} */}
           <Board board={board} onClick={gameOver ? handleRestart : handleCellClick} onGameEnd={handleGameEnd} handleCellClick={handleCellClick} currentPlayer={player} />
           <Scoreboard score={score} />
           
