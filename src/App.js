@@ -50,50 +50,27 @@ function App() {
   const handleComputerMove = (SquareIndex) => {
     // Update the board with the computer's move
     const newBoard = [...board];
-    newBoard[SquareIndex] = player === 'X' ? 'O' : 'X';
+    newBoard[SquareIndex] = 'O';
+    // newBoard[SquareIndex] = player === 'X' ? 'O' : 'X';
     setBoard(newBoard);
   
     // Check for a win or tie
     const newWinner = calculateWinner(newBoard);
     if (newWinner) {
       setWinner(newWinner);
+      // handleGameEnd(newWinner);
+      // setGameOver(true);
       // Handle game end logic
     } else if (isBoardFull(newBoard)) {
       setWinner('tie');
+      // handleGameEnd('tie');
+      // setGameOver(true);
       // Handle game end logic for a tie
     } else {
       // Switch players
       setPlayer(player === 'X' ? 'O' : 'X');
     }
   };
-  
-  
-  
-  // const Win_conditions = [
-  //   [0, 1, 2],
-  //   [3, 4, 5],
-  //   [6, 7, 8],
-  //   [0, 3, 6],
-  //   [1, 4, 7],
-  //   [2, 5, 8],
-  //   [0, 4, 8],
-  //   [2, 4, 6]
-  // ]
-
-  // const calculateWinner = (board) => {
-  //   for (let i = 0; i < Win_conditions.length; i++) {
-  //     const [x, y, z] = Win_conditions[i];
-
-  //     if (board[x] && board[x] === board[y] && board[y] === board[z]) {
-  //       setGameOver(true);
-  //       return board[x];
-  //     }
-  //   }
-  // }
-
-  // const isBoardFull = (board) => {
-  //   return board.every((cell) => cell !== null);
-  // }
 
   const handleCellClick = (index) => {
     if (board[index] || winner) {
@@ -167,7 +144,7 @@ function App() {
         <PlayerSelect onSelectPlayer={handlePlayerSelect} toggleGameMode={toggleGameMode}/>
       </>
       }
-      {/* {vsComputer && (
+      {vsComputer && (
         <>
             <ComputerPlayer
               board={board}
@@ -177,9 +154,19 @@ function App() {
             />
             <Board board={board} onClick={gameOver ? handleRestart : handleCellClick} onGameEnd={handleGameEnd} handleCellClick={handleCellClick} currentPlayer={player} />
             <Scoreboard score={score} />
+            {winner && (
+            <div className="winner-message">
+              <p className='winmessage'>{winner === 'tie' ? 'It\'s a tie!' : `Player ${winner} wins!`}</p>
+              <span className='end-buttons'>
+                {playerSelected && <button className='smallquit' onClick={handleQuit}>Quit</button>}
+                <button className='nextgame' onClick={handleRestart}>Next Round</button>
+              </span>
+            </div>
+          )}
+            
         </>
-      )} */}
-      {player && (
+      )}
+      {!vsComputer && player && (
         <>
           <section className='topbar'>
             <img className='tttlogo2' src={xologo} alt=''></img>

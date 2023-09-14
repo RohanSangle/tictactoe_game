@@ -8,7 +8,10 @@ const ComputerPlayer = ({ board, currentPlayer, onComputerMove }) => {
   const minimax = (currentBoard, depth, isMaximizing) => {
     const board = [...currentBoard];
     const winner = calculateWinner(board);
-    if (winner === AI_PLAYER) return 10 - depth;
+    if (winner === AI_PLAYER){
+      // onComputerMove(bestMove());
+      return 10 - depth;
+    } 
     if (winner === HUMAN_PLAYER) return depth - 10;
     if (isBoardFull(board)) return 0;
 
