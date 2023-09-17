@@ -52,24 +52,20 @@ function App() {
     const newBoard = [...board];
     newBoard[SquareIndex] = 'O';
     // newBoard[SquareIndex] = player === 'X' ? 'O' : 'X';
-    setBoard(newBoard);
-  
     // Check for a win or tie
     const newWinner = calculateWinner(newBoard);
-    if (newWinner) {
+    
+    if (newWinner === 'X' || newWinner === 'O' || isBoardFull(newBoard)) {
+      // Game has ended
       setWinner(newWinner);
-      // handleGameEnd(newWinner);
-      // setGameOver(true);
-      // Handle game end logic
-    } else if (isBoardFull(newBoard)) {
-      setWinner('tie');
-      // handleGameEnd('tie');
-      // setGameOver(true);
-      // Handle game end logic for a tie
-    } else {
+      setGameOver(true);
+      handleGameEnd(newWinner);
+    }
+    else {
       // Switch players
       setPlayer(player === 'X' ? 'O' : 'X');
     }
+    setBoard(newBoard);
   };
 
   const handleCellClick = (index) => {
@@ -137,7 +133,7 @@ function App() {
 
   return (
     <div className="">
-      {!player &&
+      {!player && !vsComputer &&
       <>
         {/* <h1 className='tttlogo'>Tic Tac Toe</h1> */}
         <img className='tttlogo' src={xologo} alt=''></img> 
@@ -152,13 +148,19 @@ function App() {
               onComputerMove={handleComputerMove}
               setGameOver={setGameOver} 
             />
-            <Board board={board} onClick={gameOver ? handleRestart : handleCellClick} onGameEnd={handleGameEnd} handleCellClick={handleCellClick} currentPlayer={player} />
+            <Board
+              board={board} 
+              onClick={gameOver ? handleRestart : handleCellClick} 
+              onGameEnd={handleGameEnd} 
+              handleCellClick={handleCellClick} 
+              currentPlayer={player} 
+            />
             <Scoreboard score={score} />
             {winner && (
             <div className="winner-message">
               <p className='winmessage'>{winner === 'tie' ? 'It\'s a tie!' : `Player ${winner} wins!`}</p>
               <span className='end-buttons'>
-                {playerSelected && <button className='smallquit' onClick={handleQuit}>Quit</button>}
+                <button className='smallquit' onClick={handleQuit}>Quit</button>
                 <button className='nextgame' onClick={handleRestart}>Next Round</button>
               </span>
             </div>
@@ -174,15 +176,14 @@ function App() {
             <RestartButton handleRestart={handleRestart} />
             <img className='logout' src={logout} alt='' onClick={handleQuit}></img> 
           </section>
-          {/* {vsComputer && (
-            <ComputerPlayer
-              board={board}
-              currentPlayer={player}
-              onComputerMove={handleComputerMove}
-              setGameOver={setGameOver} 
-            />
-          )} */}
-          <Board board={board} onClick={gameOver ? handleRestart : handleCellClick} onGameEnd={handleGameEnd} handleCellClick={handleCellClick} currentPlayer={player} />
+          
+          <Board 
+            board={board} 
+            onClick={gameOver ? handleRestart : handleCellClick} 
+            onGameEnd={handleGameEnd} 
+            handleCellClick={handleCellClick} 
+            currentPlayer={player} 
+          />
           <Scoreboard score={score} />
           
           {winner && (

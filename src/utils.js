@@ -15,9 +15,11 @@ export const calculateWinner = (board) => {
 
     if (board[x] && board[x] === board[y] && board[y] === board[z]) {
       // setGameOver(true);
+      
       return board[x];
     }
   }
+  
 }
 
 export const isBoardFull = (board) => {
