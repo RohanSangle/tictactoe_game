@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Frontend Mentor - Tic Tac Toe game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Tic Tac Toe game challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/tic-tac-toe-game-Re7ZF_E2v). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Available Scripts
+Difficulty level : **Intermediate** <br>
+Time taken by me : **28 hours**
 
-In the project directory, you can run:
+## Table of contents
 
-### `npm start`
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This was an Intermediate level challenge given by Frontend Mentor to develop a Tic Tac Toe game using any framework you want. 
+The challenge was to build a Tic Tac Toe that lets the user select a player's mark either X or O, and the user would have 2 choices to play the game, Either with The CPU or as multiplayer.
 
-### `npm test`
+### The challenge
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Users should be able to:
 
-### `npm run build`
+- View the optimal layout for the game depending on their device's screen size
+- Play the game either solo vs the computer or multiplayer against another person
+- See hover, active, and focus states for interactive elements on the page
+- **Bonus 1** : Save the game state in the browser so that it’s preserved if the player refreshes their browser
+- **Bonus 2** : Instead of having the computer randomly make their moves, try making it clever so it’s proactive in blocking your moves and trying to win
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## My process
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+As this challenege was to make a Tic Tac Toe game, and there were no restrictions on what tech stack to use, so I used Reactjs. I wanted to learn the use of Reactjs and proper deployment of apps.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+while visualizing what approah i would take, i looked that here majorly 2 components will be rendered, one will be when the user selects a mark and when the user chooses to go with either play vs CPU or vs player. 
+I started out with mapping the board and the initial game setup and all the required conditions. Then focussed on Player Vs player (which was hardly anything difficult),
+Then went on with Play Vs CPU which was very very difficult. This was one of the part where i spent most of my time figuring out and learning the **minimax algorithm** for the CPU.
+Then i made a bunch of states which messed up a lot of things but then in the end sorted it all out.
 
-### `npm run eject`
+Last part was to leaen about how to use useEffect to save the current board even if the website refreshes or the website is closed.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Built with
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Semantic HTML5 markup
+- CSS custom properties
+- [React](https://reactjs.org/) - JS library
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### What I learned
 
-## Learn More
+A heck lot of javascript, and using useEffect state in react. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Continued development
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+I think that now i have got a good grasp upon my React.js and CSS and will further continue into learning about API's and touch on backend development.
 
-### Code Splitting
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Linkedin - [Rohan Sangle](https://www.linkedin.com/in/rohan-sangle)
+- Frontend Mentor - [@RohanSangle](https://www.frontendmentor.io/profile/RohanSangle)
 
-### Analyzing the Bundle Size
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I would like to acknowledge Frontend Mentor for providing such good level challeneges. This really helps me to understand in which part do I lack and how should I tackle it.
