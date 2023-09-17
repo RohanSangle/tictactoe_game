@@ -20,10 +20,6 @@
   justify-content: center;
   align-items: center;
   background: local;
-  /* mix-blend-mode:multiply; */
-  /* background-color: #1a2a33; */
-  
-  
   
 }
 
@@ -33,7 +29,6 @@
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  /* padding: 0 2%; */
   height: 15%;
   width: 26%;
   margin-top: 16%;
@@ -42,8 +37,6 @@
   
   
   .tttlogo2{
-    /* margin-left: 35%; */
-    /* margin-right: 35%; */
     padding-top: 10%;
     padding-bottom: 2%;
     width: fit-content;
@@ -59,15 +52,11 @@
   .turn{
     margin-right: 5%;
     margin-top: 8%;
-    /* margin-bottom: 2%; */
     background-color: #fff;
     border: none;
-    /* cursor: pointer; */
-    /* font-size: 16px; */
     font-weight: bold;
     height: 45%;
     width: 30%;
-    /* margin-top: 20px; */
     margin-left: 5%;
     box-sizing: border-box;
     border-radius: 5px;
@@ -96,14 +85,8 @@
   position: absolute;
   top: 30%;
   width: 100%;
-  /* margin-left: 35%; */
-  /* margin-right: 35%; */
-  /* padding-top: 10%; */
-  /* padding-bottom: 2%; */
-  /* width: fit-content; */
   height: 35%;
   background-color:#1f3641;
-  /* display: flex; */
   justify-content: center;
   align-items: center;
   color: white;
@@ -124,15 +107,11 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /* background-color: #fff; */
-    /* padding: 0 2%; */
-    /* color: white; */
     height: 25%;
     width: 20%;
     margin-top: 7%;
     margin-left: 40%;
     background-color: #1f3641;
-    /* left: 40%; */
     gap: 30px;
     
     
@@ -140,7 +119,6 @@
       cursor: pointer;
       border-radius: 10px;
       border: 0;
-      /* color: white; */
       color: rgb(26 42 51);
       background-color: #a8bfc9;
       width: 50%;
@@ -152,10 +130,8 @@
     
     .nextgame{
       cursor: pointer;
-      /* width: 80%; */
       border: 0;
       border-radius: 10px;
-      /* color: white; */
       color: rgb(26 42 51);
       background-color: #f2b137;
       box-shadow: inset 0rem -0.3rem 0rem #cc8b13;

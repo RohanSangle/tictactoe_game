@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Board from './components/Board';
 import PlayerSelect from './components/PlayerSelect';
 import Scoreboard from './components/Scoreboard';
 import RestartButton from './components/RestartButton';
-import ComputerPlayer from './components/ComputerPlayer'; // Update the path to your component
+import ComputerPlayer from './components/ComputerPlayer';
 import { calculateWinner, isBoardFull } from './utils';
 import './App.css'
 import xologo from './images/logo.svg'
@@ -18,30 +18,32 @@ function App() {
   const [playerSelected, setPlayerSelected] = useState(false);
   const [vsComputer, setVsComputer] = useState(false);
 
+  //using useEffect to save the current play data even if logged out 
+  useEffect(() => {
+    const savedBoard = localStorage.getItem('ticTacToeBoard');
+    const savedPlayer = localStorage.getItem('ticTacToePlayer');
+    const savedScore = localStorage.getItem('ticTacToeScore');
 
-  // useEffect(() => {
-  //   const savedBoard = localStorage.getItem('ticTacToeBoard');
-  //   const savedPlayer = localStorage.getItem('ticTacToePlayer');
-  //   const savedScore = localStorage.getItem('ticTacToeScore');
+    if (savedBoard) {
+      setBoard(JSON.parse(savedBoard));
+    }
 
-  //   if (savedBoard) {
-  //     setBoard(JSON.parse(savedBoard));
-  //   }
+    if (savedPlayer) {
+      setPlayer(savedPlayer);
+    }
 
-  //   if (savedPlayer) {
-  //     setPlayer(savedPlayer);
-  //   }
+    if (savedScore) {
+      setScore(JSON.parse(savedScore));
+    }
+  }, []);
 
-  //   if (savedScore) {
-  //     setScore(JSON.parse(savedScore));
-  //   }
-  // }, []);
+  useEffect(() => {
+    localStorage.setItem('ticTacToeBoard', JSON.stringify(board));
+    localStorage.setItem('ticTacToePlayer', player);
+    localStorage.setItem('ticTacToeScore', JSON.stringify(score));
+  }, [board, player, score]);
 
-  // useEffect(() => {
-  //   localStorage.setItem('ticTacToeBoard', JSON.stringify(board));
-  //   localStorage.setItem('ticTacToePlayer', player);
-  //   localStorage.setItem('ticTacToeScore', JSON.stringify(score));
-  // }, [board, player, score]);
+
 
   const toggleGameMode = () => {
     setVsComputer(!vsComputer);
@@ -51,7 +53,6 @@ function App() {
     // Update the board with the computer's move
     const newBoard = [...board];
     newBoard[SquareIndex] = 'O';
-    // newBoard[SquareIndex] = player === 'X' ? 'O' : 'X';
     // Check for a win or tie
     const newWinner = calculateWinner(newBoard);
     
@@ -106,6 +107,7 @@ function App() {
 
   const handleQuit = () => {
     setPlayer(null);
+    setVsComputer(null);
     setPlayerSelected(false);
     setBoard(Array(9).fill(null));
     setWinner(null);
@@ -128,20 +130,26 @@ function App() {
     setBoard(Array(9).fill(null))
     setPlayer('X');
     setWinner(null);
-    // setScore({ X: 0, O: 0, tie: 0 });
+    
   };
 
   return (
-    <div className="">
+    <div >
       {!player && !vsComputer &&
       <>
-        {/* <h1 className='tttlogo'>Tic Tac Toe</h1> */}
         <img className='tttlogo' src={xologo} alt=''></img> 
         <PlayerSelect onSelectPlayer={handlePlayerSelect} toggleGameMode={toggleGameMode}/>
       </>
       }
       {vsComputer && (
         <>
+          <section className='topbar'>
+            <img className='tttlogo2' src={xologo} alt=''></img>
+            <button className='turn'>{player} turn</button>
+            <RestartButton handleRestart={handleRestart} />
+            <img className='logout' src={logout} alt='' onClick={handleQuit}></img> 
+          </section>
+
             <ComputerPlayer
               board={board}
               currentPlayer={player}

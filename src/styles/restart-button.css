@@ -2,16 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* color: grey; */
   border: none;
   cursor: pointer;
-  /* font-size: 16px; */
-  /* font-weight: bold; */
   height: fit-content;
   width: fit-content;
   margin-top: 8%;
   margin-right: 6%;
-  /* margin-right: 35%; */
   background-color: rgb(168, 191, 201);
   box-shadow: inset 0rem -0.4rem 0rem #6b8997;
   box-sizing: border-box;

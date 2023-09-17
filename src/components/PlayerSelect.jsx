@@ -3,12 +3,6 @@ import '../styles/player-select.css'
 
 const PlayerSelect = ( {onSelectPlayer, toggleGameMode} ) => {
   const [chosenPlayer, setChosenPlayer]=useState(null);
-  
-
-  // const choosingPlayer=(player)=>{
-  //   setChosenPlayer(player);
-
-  // };
 
   const choosingPlayer = (player) => {
     setChosenPlayer(player === chosenPlayer ? null : player);
@@ -40,14 +34,6 @@ const PlayerSelect = ( {onSelectPlayer, toggleGameMode} ) => {
       </section >
       <section className='menusmallbox2'>
         <button className='yellow'onClick={toggleGameMode}>NEW GAME (VS CPU)</button>
-        {/* {vsComputer && (
-            <ComputerPlayer
-              board={board}
-              currentPlayer={player}
-              onComputerMove={handleComputerMove}
-              setGameOver={setGameOver} 
-            />
-          )} */}
         <button className='blue' onClick={handleNewGameClick}>NEW GAME (VS PLAYER)</button>
         
       </section>

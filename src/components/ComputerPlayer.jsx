@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import {useEffect} from 'react';
 import { calculateWinner, isBoardFull } from '../utils';
 
 const ComputerPlayer = ({ board, currentPlayer, onComputerMove }) => {
@@ -66,6 +66,7 @@ const ComputerPlayer = ({ board, currentPlayer, onComputerMove }) => {
       onComputerMove(move);
     }
   };
+
 
   useEffect(() => {
     if (currentPlayer === AI_PLAYER) {
