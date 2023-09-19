@@ -145,5 +145,50 @@
   
 }
 
+@media (max-width: 480px){
+  .tttlogo{
+    margin-left: 40%;
+    padding-top: 10%;
+    top: 5%;
+    
+  }
+
+  .tttlogo2{
+    padding-top: 10%;
+    padding-bottom: 2%;
+    /* width: 10%; */
+    
+  }
+
+  .topbar{
+    right: 24%;
+    width: 72%;
+  }
+
+  .logout{
+    left: 2%;
+    width: 100%;
+  }
+
+  .winner-message{
+    height: 25%;
+  }
+
+  .end-buttons{
+    width: 100%;
+    top: 25%;
+    right: 10%;
+    gap: 5px;
+  }
+
+  .smallquit{
+    width: 100%;
+  }
+
+  .nextgame{
+    width: 100%;
+  }
+}
+
 
 

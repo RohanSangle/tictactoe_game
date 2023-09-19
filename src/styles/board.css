@@ -9,15 +9,20 @@
   
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .board {
     max-width: 300px;
   }
-}
+} */
 
 @media (max-width: 480px) {
   .board {
-    max-width: 200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    margin-top: 20px;
+    width: 75%;
+    margin: 0 auto;
   }
 }
   
