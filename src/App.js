@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import Board from './components/Board';
 import PlayerSelect from './components/PlayerSelect';
 import Scoreboard from './components/Scoreboard';
@@ -19,13 +19,22 @@ function App() {
   const [vsComputer, setVsComputer] = useState(false);
 
   //using useEffect to save the current play data even if logged out 
-  useEffect(() => {
+
+  useLayoutEffect(() => {
     const savedBoard = localStorage.getItem('ticTacToeBoard');
     const savedPlayer = localStorage.getItem('ticTacToePlayer');
     const savedScore = localStorage.getItem('ticTacToeScore');
+    const pSelection = localStorage.getItem('playerselection');
+
+    if (pSelection) {
+      setPlayerSelected(true);
+    }
 
     if (savedBoard) {
       setBoard(JSON.parse(savedBoard));
+      
+    }else{
+      setBoard(Array(9).fill(null));
     }
 
     if (savedPlayer) {
@@ -34,15 +43,19 @@ function App() {
 
     if (savedScore) {
       setScore(JSON.parse(savedScore));
+    }else{
+      setScore({ X: 0, O: 0, tie: 0 });
     }
-  }, []);
+  }, []); 
 
   useEffect(() => {
-    localStorage.setItem('ticTacToeBoard', JSON.stringify(board));
-    localStorage.setItem('ticTacToePlayer', player);
-    localStorage.setItem('ticTacToeScore', JSON.stringify(score));
-  }, [board, player, score]);
-
+    
+    window.localStorage.setItem('ticTacToeBoard', JSON.stringify(board));
+    window.localStorage.setItem('ticTacToePlayer', player);
+    window.localStorage.setItem('ticTacToeScore', JSON.stringify(score));
+    window.localStorage.setItem('playerselection', playerSelected);
+  
+  }, [board,player, score, playerSelected]);
 
 
   const toggleGameMode = () => {
