@@ -12,6 +12,7 @@ Time taken by me : **28 hours**
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
+  - [Errors remaining](#errors-remaining)
   - [Continued development](#continued-development)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
@@ -40,7 +41,7 @@ I started out with mapping the board and the initial game setup and all the requ
 Then went on with Play Vs CPU which was very very difficult. This was one of the part where i spent most of my time figuring out and learning the **minimax algorithm** for the CPU.
 Then i made a bunch of states which messed up a lot of things but then in the end sorted it all out.
 
-Last part was to leaen about how to use useEffect to save the current board even if the website refreshes or the website is closed.
+Last part was to leaen about how to use useEffect and localStorage to save the current board even if the website refreshes or the website is closed.
 
 ### Built with
 
@@ -51,7 +52,21 @@ Last part was to leaen about how to use useEffect to save the current board even
 
 ### What I learned
 
-A heck lot of javascript, and using useEffect state in react. 
+- complex use case of Arrow functions
+- useLayoutEffect & useEffect hook
+- localStorage
+- Minimax algorithm for CPU
+- circular imports/exports problem
+
+### Errors remaining
+
+- Selecting player 'O' makes O go first in Vs Player mode.
+
+- Even fter selecting 'O' and playing with CPU, you play as X (cause in my minimax algorithm i have put it such that the human will be X and ai player will be O all the time).
+
+- When playing Vs CPU and refreshing the website, CPU behaves like a normal person and  does not make his intellectual move (the game changes to vs Player it seems).
+
+- After opening the game anytime later the saveBoard with null values in localStorage is displayed first instead of the player selection window.
 
 ### Continued development
 
