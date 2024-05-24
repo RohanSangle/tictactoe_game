@@ -15,7 +15,7 @@ const GameModeSelect = ({vsComputer, setVsComputer, player, setPlayerSelected, p
 
 
   return (
-    <div className='menu'>
+    <div className='menu_second'>
       <div className='menusmallbox2'>
           <button className='yellow'onClick={toggleGameMode}>NEW GAME (VS CPU)</button>
           <button className='blue' onClick={handleNewGameClick}>NEW GAME (VS PLAYER)</button>

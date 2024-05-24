@@ -8,16 +8,18 @@ const PlayerSelect = ( {setPlayer} ) => {
     
     if (player === 'X') {
       setPlayer('X');
+      setChosenPlayer('X');
       // console.log("X is chosen")
     } 
     else if (player === 'O') {
       setPlayer('O');
+      setChosenPlayer('O');
       // console.log("O is chosen")
     }
   };
 
-  const xButtonClassName = setPlayer === 'X' ? 'xbutton selected' : 'xbutton';
-  const oButtonClassName = setPlayer === 'O' ? 'obutton selected' : 'obutton';
+  const xButtonClassName = chosenPlayer === 'X' ? 'xbutton selected' : 'xbutton';
+  const oButtonClassName = chosenPlayer === 'O' ? 'obutton selected' : 'obutton';
 
   return (
     <div className='menu'>

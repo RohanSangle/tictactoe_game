@@ -20,6 +20,7 @@
   justify-content: center;
   align-items: center;
   background: local;
+  margin-top: -4%;
   
 }
 
@@ -31,7 +32,7 @@
   background-color: #fff;
   height: 15%;
   width: 26%;
-  margin-top: 16%;
+  /* margin-top: 16%; */
   margin-left: 37%;
   background-color: #1a2a33;
   
@@ -81,7 +82,6 @@
 
 .winner-message{
   text-align: center;
-  
   position: absolute;
   top: 30%;
   width: 100%;
@@ -91,8 +91,9 @@
   align-items: center;
   color: white;
   text-transform: uppercase;
-
+  
   .winmessage{
+    /* align-items: center; */
     top: 30%;
     height: 20%;
     background-color: #1f3641;
