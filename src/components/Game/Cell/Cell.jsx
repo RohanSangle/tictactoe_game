@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/cell.css';
+import '../Cell/cell.css';
 
 const Cell = ({ value, onClick, currentPlayer }) => {
   const cellContentClass = value === 'X' ? 'x-content' : 'o-content';

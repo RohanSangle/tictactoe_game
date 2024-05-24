@@ -1,5 +1,5 @@
 .scoreboard {
-  position: relative;
+  /* position: relative; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,13 +29,6 @@
     background-color: #f2b137;
   }
 }
-
-/* @media (max-width: 768px) {
-  
-  .scoreboard {
-    font-size: 14px;
-  }
-} */
 
 @media (max-width: 480px) {
   .scoreboard {

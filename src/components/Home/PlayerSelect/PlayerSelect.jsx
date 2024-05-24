@@ -1,24 +1,25 @@
 import React,{useState} from 'react';
-import '../styles/player-select.css'
+import '../PlayerSelect/PlayerSelect.css'
 
-const PlayerSelect = ( {onSelectPlayer, toggleGameMode} ) => {
+const PlayerSelect = ( {setPlayer} ) => {
   const [chosenPlayer, setChosenPlayer]=useState(null);
 
   const choosingPlayer = (player) => {
-    setChosenPlayer(player === chosenPlayer ? null : player);
+    
+    if (player === 'X') {
+      setPlayer('X');
+      setChosenPlayer('X');
+
+    } 
+    else if (player === 'O') {
+      setPlayer('O');
+      setChosenPlayer('O');
+      
+    }
   };
 
   const xButtonClassName = chosenPlayer === 'X' ? 'xbutton selected' : 'xbutton';
   const oButtonClassName = chosenPlayer === 'O' ? 'obutton selected' : 'obutton';
-
-
-  const handleNewGameClick = () => {
-    if (chosenPlayer === 'X') {
-      onSelectPlayer('X');
-    } else if (chosenPlayer === 'O') {
-      onSelectPlayer('O');
-    }
-  };
 
   return (
     <div className='menu'>
@@ -32,11 +33,6 @@ const PlayerSelect = ( {onSelectPlayer, toggleGameMode} ) => {
         </section>
         <h4 className='line'>REMEMBER : X goes first</h4>
       </section >
-      <section className='menusmallbox2'>
-        <button className='yellow'onClick={toggleGameMode}>NEW GAME (VS CPU)</button>
-        <button className='blue' onClick={handleNewGameClick}>NEW GAME (VS PLAYER)</button>
-        
-      </section>
     </div>
   );
 };

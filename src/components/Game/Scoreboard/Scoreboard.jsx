@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/scoreboard.css'
+import '../Scoreboard/scoreboard.css'
 
 const Scoreboard = ({ score }) => {
   const { X, O, tie } = score;
