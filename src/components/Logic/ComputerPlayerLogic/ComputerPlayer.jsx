@@ -1,7 +1,8 @@
 import {useEffect} from 'react';
-import { calculateWinner, isBoardFull } from '../utils';
+import { calculateWinner, isBoardFull } from '../WinningCondition/WinningCondition.js';
 
 const ComputerPlayer = ({ board, currentPlayer, onComputerMove }) => {
+
   const AI_PLAYER = 'O';
   const HUMAN_PLAYER = 'X';
 
@@ -73,10 +74,6 @@ const ComputerPlayer = ({ board, currentPlayer, onComputerMove }) => {
       makeMove();
     }
   }, [currentPlayer]);
-
-  // if (currentPlayer === AI_PLAYER) {
-  //   makeMove();
-  // }
 
   return null;
 };

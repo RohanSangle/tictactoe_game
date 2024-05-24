@@ -1,8 +1,9 @@
 import React from 'react';
-import Cell from './Cell';
-import '../styles/board.css'
+import '../Board/board.css'
+import Cell from '../Cell/Cell.jsx';
 
 const Board = ({ board, handleCellClick, currentPlayer }) => {
+
   return (
     <div className="board">
       {board.map((value, index) => (

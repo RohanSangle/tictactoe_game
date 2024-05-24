@@ -8,7 +8,7 @@ const Win_conditions = [
   [0, 4, 8],
   [2, 4, 6]
 ]
-
+  
 export const calculateWinner = (board) => {
   for (let i = 0; i < Win_conditions.length; i++) {
     const [x, y, z] = Win_conditions[i];
@@ -19,9 +19,9 @@ export const calculateWinner = (board) => {
       return board[x];
     }
   }
-  
 }
-
+  
 export const isBoardFull = (board) => {
   return board.every((cell) => cell !== null);
 }
+
