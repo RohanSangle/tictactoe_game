@@ -26,14 +26,6 @@
   font-weight:bold;
 }
 
-/* @media (max-width: 768px) {
-  
-  .cell {
-    font-size: 20px;
-    height: 80px;
-  }
-} */
-
 @media (max-width: 480px) {
   .cell {
     /* font-size: medium; */

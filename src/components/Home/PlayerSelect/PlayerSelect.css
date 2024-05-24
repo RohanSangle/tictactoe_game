@@ -7,8 +7,6 @@
   column-gap: 2rem;
   width: 50%;
   height: 60%;
-  /* height: 100%; */
-  /* margin-top: -5%; */
   
 }
 
@@ -16,7 +14,6 @@
   margin-right: 20%;
   width: 68%;
   height: 65%;
-  /* height: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -126,8 +123,6 @@
 
 @media (max-width: 480px) {
   .menu {
-    /* display: flex; */
-    /* flex-direction: column; */
     align-items: center;
     width: 100%;
     right: 20%;

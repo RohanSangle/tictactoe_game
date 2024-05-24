@@ -9,12 +9,12 @@ const PlayerSelect = ( {setPlayer} ) => {
     if (player === 'X') {
       setPlayer('X');
       setChosenPlayer('X');
-      // console.log("X is chosen")
+
     } 
     else if (player === 'O') {
       setPlayer('O');
       setChosenPlayer('O');
-      // console.log("O is chosen")
+      
     }
   };
 

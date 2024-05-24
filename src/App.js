@@ -92,11 +92,11 @@ function App() {
       handleGameEnd(newWinner);
     }
     else {
-      // Switch players
       setPlayer(player === 'X' ? 'O' : 'X');
     }
     setBoard(newBoard);
   };
+
   //using useEffect to save the current play data even if logged out 
 
   useLayoutEffect(() => {
@@ -139,78 +139,6 @@ function App() {
 
   
   return (
-    // <div >
-      // {!player && !vsComputer &&
-      // <>
-      //   <img className='tttlogo' src={xologo} alt=''></img> 
-      //   <PlayerSelect onSelectPlayer={handlePlayerSelect} toggleGameMode={toggleGameMode}/>
-      // </>
-      // }
-    //   {vsComputer && (
-    //     <>
-    //       <section className='topbar'>
-    //         <img className='tttlogo2' src={xologo} alt=''></img>
-    //         <button className='turn'>{player} turn</button>
-    //         <RestartButton handleRestart={handleRestart} />
-    //         <img className='logout' src={logout} alt='' onClick={handleQuit}></img> 
-    //       </section>
-
-    //         <ComputerPlayer
-    //           board={board}
-    //           currentPlayer={player}
-    //           onComputerMove={handleComputerMove}
-    //           setGameOver={setGameOver} 
-    //         />
-    //         <Board
-    //           board={board} 
-    //           onClick={gameOver ? handleRestart : handleCellClick} 
-    //           onGameEnd={handleGameEnd} 
-    //           handleCellClick={handleCellClick} 
-    //           currentPlayer={player} 
-    //         />
-    //         <Scoreboard score={score} />
-    //         {winner && (
-    //         <div className="winner-message">
-    //           <p className='winmessage'>{winner === 'tie' ? 'It\'s a tie!' : `Player ${winner} wins!`}</p>
-    //           <span className='end-buttons'>
-    //             <button className='smallquit' onClick={handleQuit}>Quit</button>
-    //             <button className='nextgame' onClick={handleRestart}>Next Round</button>
-    //           </span>
-    //         </div>
-    //       )}
-            
-    //     </>
-    //   )}
-    //   {!vsComputer && player && (
-    //     <>
-    //       <section className='topbar'>
-    //         <img className='tttlogo2' src={xologo} alt=''></img>
-    //         <button className='turn'>{player} turn</button>
-    //         <RestartButton handleRestart={handleRestart} />
-    //         <img className='logout' src={logout} alt='' onClick={handleQuit}></img> 
-    //       </section>
-          
-    //       <Board 
-    //         board={board} 
-    //         onClick={gameOver ? handleRestart : handleCellClick} 
-    //         onGameEnd={handleGameEnd} 
-    //         handleCellClick={handleCellClick} 
-    //         currentPlayer={player} 
-    //       />
-    //       <Scoreboard score={score} />
-          
-    //       {winner && (
-    //         <div className="winner-message">
-    //           <p className='winmessage'>{winner === 'tie' ? 'It\'s a tie!' : `Player ${winner} wins!`}</p>
-    //           <span className='end-buttons'>
-    //             {playerSelected && <button className='smallquit' onClick={handleQuit}>Quit</button>}
-    //             <button className='nextgame' onClick={handleRestart}>Next Round</button>
-    //           </span>
-    //         </div>
-    //       )}
-    //     </>
-    //   )}
-    // </div>
     <div>
       {!playerSelected && !vsComputer && (
       <>

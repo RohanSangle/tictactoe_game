@@ -16,16 +16,6 @@
   
 }
 
-
-/* @media (max-width: 768px) {
-  
-  .restart-button {
-    font-size: 14px;
-    height: 30px;
-    width: 100px;
-  }
-} */
-
 @media (max-width: 480px) {
   .restart-button {
     font-size: 12px;

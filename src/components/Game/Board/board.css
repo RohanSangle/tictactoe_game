@@ -9,12 +9,6 @@
   
 }
 
-/* @media (max-width: 768px) {
-  .board {
-    max-width: 300px;
-  }
-} */
-
 @media (max-width: 480px) {
   .board {
     display: grid;
